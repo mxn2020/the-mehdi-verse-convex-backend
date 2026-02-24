@@ -16,6 +16,42 @@ export default defineSchema({
     // ─── Auth (shared across all apps) ─────────────────────────
     ...authTables,
 
+    // ─── User Profiles & Settings (shared) ───────────────────────
+    user_profiles: defineTable({
+        userId: v.id("users"),
+        name: v.optional(v.string()),
+        bio: v.optional(v.string()),
+        avatarStorageId: v.optional(v.id("_storage")),
+        updatedAt: v.number(),
+    }).index("by_userId", ["userId"]),
+
+    user_settings: defineTable({
+        userId: v.id("users"),
+        theme: v.optional(v.string()),
+        language: v.optional(v.string()),
+        emailNotifications: v.optional(v.boolean()),
+        updatedAt: v.number(),
+    }).index("by_userId", ["userId"]),
+
+    // ─── Billing / Memberships (shared) ──────────────────────────
+    subscriptions: defineTable({
+        userId: v.id("users"),
+        stripeCustomerId: v.optional(v.string()),
+        stripeSubscriptionId: v.optional(v.string()),
+        plan: v.string(), // "free", "pro", "business"
+        status: v.string(), // "active", "past_due", "canceled"
+        currentPeriodEnd: v.optional(v.number()),
+    }).index("by_userId", ["userId"]),
+
+    invoices: defineTable({
+        userId: v.id("users"),
+        stripeInvoiceId: v.string(),
+        amount: v.number(),
+        status: v.string(), // "paid", "open", "void"
+        date: v.number(),
+        pdfUrl: v.optional(v.string()),
+    }).index("by_userId", ["userId"]),
+
     // ─── AI Appointment Booking ────────────────────────────────
     ai_appointment_booking_appointments: defineTable({
         title: v.string(),

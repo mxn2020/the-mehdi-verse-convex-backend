@@ -11,15 +11,16 @@
     "lint": "eslint ."
   },
   "dependencies": {
-    "convex": "^1.17.4",
-    "@convex-dev/auth": "^0.0.80",
-    "@auth/core": "0.37.0"
+    "@auth/core": "0.37.0",
+    "@convex-dev/auth": "^0.0.90",
+    "convex": "^1.17.4"
   },
   "devDependencies": {
-    "convex-helpers": "^0.1.67",
-    "typescript": "^5.7.3",
+    "@types/node": "^25.3.0",
     "@typescript-eslint/eslint-plugin": "^8.0.0",
     "@typescript-eslint/parser": "^8.0.0",
-    "eslint": "^9.0.0"
+    "convex-helpers": "^0.1.67",
+    "eslint": "^9.0.0",
+    "typescript": "^5.7.3"
   }
 }

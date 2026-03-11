@@ -1,0 +1,16 @@
+name: the-mehdi-verse-convex-backend
+project_scope: main
+project_type: standalone
+description: Shared Convex backend for all The Mehdi Verse apps
+tier: idea
+lane: mehdi-verse
+priority: medium
+oss: true
+stack: [typescript, convex]
+repo: "https://github.com/mxn2020/the-mehdi-verse-convex-backend"
+deploy_url: null
+last_active: 2026-02-24
+tags: [backend, verse, mehdi, convex, the]
+notes: null
+id: 14b662de-55cf-46ef-aeab-e8477e726c5b
+category: fullstack-app

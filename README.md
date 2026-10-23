@@ -69,7 +69,7 @@ convex/
 
 ## License
 
-MIT © Mehdi Nabhani
+MIT © AVS Media
 
 ---
 
